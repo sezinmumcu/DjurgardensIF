@@ -1,16 +1,43 @@
-# DjurgardensIF
-This is a data analysis project aimed at predicting the total number of goals scored by Djurgardens IF players. 
-The dataset was manually scraped from the website eliteprospects.com. It includes different variables regarding various player attributes such as age, height, weight, position, games played, assists, penalty minutes, and more.
+# Djurgardens IF Hockey - Goal Prediction Analysis
 
-The dataset underwent cleaning and preprocessing steps to ensure data quality and prepare it for analysis. The correct and consistent data was ensured by correcting for mistakes during scraping, correcting for data types, and handling missing data. Missing data is mostly handled by either putting placeholders or 0, as in a sports dataset, it is hard to guess without causing any bias. Furthermore, from the source websites, the missing data most likely meant the absence of performance. Therefore, computing missing variables as 0 intuitively made sense. Variable names were updated for clarity, and data scaling was performed using RobustScaler to handle outliers and bring features to a similar scale. 
+## Overview
+This project aims to predict the total number of goals scored by players of Djurgardens IF, a Swedish ice hockey team. The analysis uses machine learning techniques to explore various player attributes and their relationship with goal-scoring performance.
 
-Data visualisation plays a crucial role in understanding and communicating insights from the dataset. In this project, various visualisations were created to explore the relationships between variables and gain a deeper understanding of the data. One notable visualisation library used was Lux, which automatically generates visuals based on the structure and content of the dataset. 
+## Data Source
+The dataset was manually scraped from [eliteprospects.com](https://www.eliteprospects.com/team/3/djurgardens-if). It includes various player attributes such as age, height, weight, position, games played, assists, penalty minutes, and more.
 
-The exploratory data analysis revealed several key findings:
-1. Assists and games played showed a strong positive correlation with total goals, indicating that players with more assists and games played tend to score more goals.
-2. Penalty minutes also exhibited a positive relationship with total goals, suggesting that players who spend more time in the penalty box may also be more aggressive and involved in scoring opportunities.
-4. The distribution of goals was right-skewed, with most players scoring a relatively low number of goals while a few players scored a significantly higher number.
-5. Visualisations also highlighted the importance of player positions, with forwards generally scoring more goals compared to defensemen and goaltenders.
-These insights from the exploratory data analysis guided our feature selection and modelling approach, ultimately contributing to the development of a more accurate and interpretable model for predicting the total goals scored by Djurgardens IF hockey players.
+## Project Structure
+- `DjurgardensIF.ipynb`: Jupyter notebook containing the data analysis and modeling code
+- `djurgardens.xlsx`: Raw data file (not included in the repository)
+- `Report_Predicting_Total_Goals.pdf`: Detailed report of the analysis and findings
 
-Several machine learning algorithms were compared to identify the best fit for predicting total goals. The models evaluated included Support Vector Machines (SVM), XGBoost, linear regression, and Random Forest Regression. The models were ranked based on their R-squared (R2) scores using 5-fold cross-validation. Linear Regression emerged as the top-performing model with an R2 score of 0.6573, closely followed by Random Forest with an R2 score of 0.6408. Despite Linear Regression's slightly better performance, Random Forest was chosen for further development due to its potential for improvement through hyperparameter tuning. A grid search was performed to find the best hyperparameters for the Random Forest model. The parameter grid included variations in the number of estimators, maximum depth, minimum samples per leaf, maximum features, and minimum samples for splitting. The best model achieved an R2 score of 0.6589 during cross-validation and 0.5808 on the test set, with a median absolute error (MAE) of 0.2168.
+## Skills and Techniques Demonstrated
+- Data cleaning and preprocessing using pandas
+- Exploratory Data Analysis (EDA) with matplotlib, seaborn, and Lux
+- Feature scaling using RobustScaler
+- Machine learning model implementation:
+  - Support Vector Machines (SVM)
+  - XGBoost
+  - Linear Regression
+  - Random Forest Regression
+- Hyperparameter tuning with GridSearchCV
+- Cross-validation techniques
+- Feature importance analysis
+- Model evaluation using R-squared and Median Absolute Error metrics
+- Data visualization for model performance analysis
+
+## Key Features
+1. Data cleaning and preprocessing
+2. Exploratory Data Analysis (EDA) using various visualization techniques
+3. Model selection and evaluation (SVM, XGBoost, Linear Regression, Random Forest)
+4. Hyperparameter tuning for the Random Forest model
+5. Feature importance analysis
+
+## Main Findings
+- Assists and games played showed strong positive correlations with total goals scored
+- The Random Forest model achieved the best performance with an R² score of 0.5808 on the test set
+- Assists, games played, and penalty minutes were identified as the most important features for predicting goals
+
+## Requirements
+- Python 3.x
+- Libraries: pandas, matplotlib, seaborn, numpy, scikit-learn, xgboost, lux
