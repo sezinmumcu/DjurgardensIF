@@ -38,6 +38,12 @@ The dataset was manually scraped from [eliteprospects.com](https://www.elitepros
 - The Random Forest model achieved the best performance with an R² score of 0.5808 on the test set
 - Assists, games played, and penalty minutes were identified as the most important features for predicting goals
 
+_Actual vs Predicted Goals_:
+![Unknown-1](https://github.com/user-attachments/assets/b9ffe3f5-c0f6-4a38-add3-1f4c061502cc)
+
+_The Residuals_: 
+![Unknown-2](https://github.com/user-attachments/assets/2c13afb4-162e-449d-ab2b-21ee1277ff3c)
+
 ## Requirements
 - Python 3.x
 - Libraries: pandas, matplotlib, seaborn, numpy, scikit-learn, xgboost, lux
